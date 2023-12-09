@@ -1,6 +1,8 @@
 import express from "express";
 import dotenv from "dotenv";
 import db from "./config/database.js";
+import cookieParser from "cookie-parser";
+import cors from "cors";
 // import Users from "./models/UserModel.js"; (import untuk membuat tabel Users)
 import router from "./routes/index.js";
 
@@ -17,7 +19,10 @@ try {
     console.error(error);
 }
 
-
+//supaya dapat diakses keluar port. letak domain ada di origin : 'http:localhost:post!!!'
+app.use(cors( { credentials: true, origin: 'http://localhost:3000'}));
+//digunakan untuk token supaya tidak perlu refresh token apabila sudah login
+app.use(cookieParser());
 //express.jeson untuk menerima data dalam bentuk json
 app.use(express.json());
 //Midleware

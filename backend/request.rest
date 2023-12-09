@@ -1,16 +1,15 @@
 //file untuk pengujian dengan extentions Rest CLient
 
 GET http://localhost:3005/users
-Authorization: Bearer
-eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsIm5hbWUiOiJCZXRhIE51cnVsIEF3d2FsaW4iLCJlbWFpbCI6ImVtYWlsQGdtYWlsLmNvbSIsImlhdCI6MTcwMjEyNzQ0OSwiZXhwIjoxNzAyMTI3NDY5fQ.I621fkrLLxpLKIhCpObuj5bmsBeUtwVOaML8_V6OyfQ
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjUsIm5hbWUiOiJiZXRhIiwiZW1haWwiOiJiZXRhQGdtYWlsLmNvbSIsImlhdCI6MTcwMjEzMzcxNiwiZXhwIjoxNzAyMTMzNzM2fQ.cNFjcXKOsDtYj3T-Yn80O6Ki6DSGPz843lQMzMzpqM0
 
 ###
 POST  http://localhost:3005/users
 Content-Type: application/json
 
 {
-    "name" : "siapa saya",
-    "email" : "email@gmail.com",
+    "name" : "beta",
+    "email" : "beta@gmail.com",
     "password" : "123456",
     "confPassword" : "123456"
 }
@@ -20,6 +19,12 @@ POST  http://localhost:3005/login
 Content-Type: application/json
 
 {
-    "email" : "email@gmail.com",
+    "email" : "beta@gmail.com",
     "password" : "123456"
 }
+
+###
+GET http://localhost:3005/token 
+
+###
+DELETE http://localhost:3005/logout
